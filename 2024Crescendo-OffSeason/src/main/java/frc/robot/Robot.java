@@ -136,7 +136,7 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
-    RobotContainer.m_Swerve.setPose(new Pose2d(15.135,5.579, new Rotation2d(Math.PI)));
+    
   }
 
   /** This function is called periodically during operator control. */
@@ -154,9 +154,9 @@ public class Robot extends TimedRobot {
     {
       new HybridAMP(Button.kA.value, Button.kRightTrigger.value).schedule();
     }
-    // if(RobotContainer.m_driverController.getBButtonPressed()){
-    //   new NoteOut(Button.kB.value).schedule();
-    // }
+    if(RobotContainer.m_driverController.getBButtonPressed()){
+      new NoteOut(Button.kB.value).schedule();
+    }
     
     if(RobotContainer.m_driverController.getXButtonPressed()){
       new TestSPKUP(-33,40,0).schedule();
@@ -172,6 +172,7 @@ public class Robot extends TimedRobot {
     CommandScheduler.getInstance().cancelAll();
     
     RobotContainer.m_Swerve.resetModulesToAbsolute();
+    RobotContainer.m_Swerve.setPose(new Pose2d(15.135,5.579, new Rotation2d()));
   }
 
   /** This function is called periodically during test mode. */
@@ -195,6 +196,27 @@ public class Robot extends TimedRobot {
     // else{
     //   RobotContainer.m_Arm.SetPCT(0);
     // }
+    if(RobotContainer.m_driverController.getRightBumperPressed()){//TODO AMP按钮
+      new NewAutoSPKUP(Button.kRightBumper.value).schedule();;
+    }
+    if(RobotContainer.m_driverController.getLeftBumperPressed())
+    {
+      new NoteIntake(Button.kLeftBumper.value).schedule();;
+    }
+    if(RobotContainer.m_driverController.getAButtonPressed())
+    {
+      new HybridAMP(Button.kA.value, Button.kRightTrigger.value).schedule();
+    }
+    // if(RobotContainer.m_driverController.gvggggggggggggggggggetBButtonPressed()){
+    //   new NoteOut(Button.kB.value).schedule();
+    // }
+    
+    if(RobotContainer.m_driverController.getXButtonPressed()){
+      new TestSPKUP(-33,40,0).schedule();
+    }
+    if(RobotContainer.m_driverController.getYButtonPressed()){
+      new ManualSPKDown(Button.kY.value, Button.kRightTrigger.value).schedule();
+    }
   }
 
   /** This function is called once when the robot is first started up. */

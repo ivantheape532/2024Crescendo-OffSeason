@@ -83,8 +83,8 @@ public final class Constants {
 
     public static final double ArmDefaultDegree = -72.29;
     public static final double ArmAMPDegree = 46.;
-    public static final double ArmUpSPKDegree = 50;
-    public static final double ArmDownSPKDegree = 60;
+    public static final double ArmUpSPKDegree = 0.;
+    public static final double ArmDownSPKDegree = 50.;
   }
 
   public static class IntakerConstants {
@@ -114,7 +114,7 @@ public final class Constants {
     public static final double ShooterSpeedTolerence = 1.5;
 
     public static final double ShooterAMPRPS = 0.;
-    public static final double ShooterManualSPKRPS = 45;
+    public static final double ShooterManualSPKRPS = 45.;
   }
 
   public static class BlockerConstants {
@@ -161,12 +161,12 @@ public final class Constants {
       new Point2D.Double(3.08,-61),
       
       new Point2D.Double(3.5,-63),
-      new Point2D.Double(4.07,-65),
+      new Point2D.Double(4.07,-6),
       new Point2D.Double(5.16,-67),
       new Point2D.Double(5.5,-70),
-      
-      new Point2D.Double(5.51,-50),
-      new Point2D.Double(5.52, -50),
+
+      new Point2D.Double(5.51, -50),
+      new Point2D.Double(5.52, -50)
     };
 
     public static final Point2D[] DisToRPSPoints = {
@@ -175,7 +175,6 @@ public final class Constants {
       new Point2D.Double(3.07,50),
       
       new Point2D.Double(5.16,55),
-      
 
       new Point2D.Double(5.5, 55),
       new Point2D.Double(5.51, 40),
